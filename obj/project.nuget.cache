@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rU4ayaHy9HcRxUWL73t3SL/h1QDiojpXfg6JNe1xa4CE02GSifeUNr1VE10xYfIqYjVzYgLk6lJhPl9gDUTmug==",
+  "dgSpecHash": "5h2lXWbgGTFpPpoQEV+0V61t/BY2LTqldehhx7E8vWMwaSfx/aNP9CHAXt52M7l8rugN3DcVhYN3pcd9MCPGvQ==",
   "success": true,
-  "projectFilePath": "C:\\Training\\Bookish\\bookish\\bookish.csproj",
+  "projectFilePath": "C:\\Training\\Bookish\\bookish.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pranal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\pranal\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",

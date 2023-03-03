@@ -18,14 +18,29 @@ public class CheckoutController : Controller
     {
         var listViewModel = _ICheckoutActions.ViewCheckout();
         return View(listViewModel);
-    
     }
 
     [Route("ListCheckouts")]
     [HttpPost]
     public IActionResult ListCheckouts(int bookId, int memberId)
     {
-        var checkoutList =_ICheckoutActions.Checkout( bookId,  memberId);
+        var checkoutList = _ICheckoutActions.Checkout(bookId, memberId);
         return View(checkoutList);
+    }
+
+    // [Route("ListCheckouts")]
+    [HttpPost]
+    public IActionResult DispalyCheckoutList()
+    {
+        // var checkoutList = _ICheckoutActions.Checkout(0, 0);
+        return View(ListCheckouts(0, 0));
+        //   return RedirectToAction("ListCheckouts", new { bookId = 0, memberId = 0 });
+    }
+
+    [HttpPost]
+    public IActionResult CheckIn(int bookId)
+    {
+        var bookName = _ICheckoutActions.CheckInBook(bookId);
+        return View("CheckIn", bookName);
     }
 }

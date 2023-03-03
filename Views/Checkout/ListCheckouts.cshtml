@@ -16,19 +16,19 @@
         <th>Return Date</th>
 
     </tr>
-   
+
     @foreach (var checkout in Model)
     {
         <tr>
-            <form method="post" asp-controller="Checkout" asp-action="Checkin" >
-            <td><code asp-for="Model.checkout.Id">@checkout.Id</code> </td>
-            <td><code asp-for="Model.checkout.BooksId">@checkout.BooksId</code> </td>
-            <td><code asp-for="Model.checkout.BooksId">@checkout.Book</code> </td>
-            <td><code asp-for="Model.checkout.MembersId">@checkout.MembersId</code> </td>
-            <td><code asp-for="Model.checkout.MembersId">@checkout.Member</code> </td>
-            <td><code asp-for="Model.checkout.CheckoutDate">@checkout.CheckoutDate</code> </td>
-            <td><code asp-for="Model.checkout.ReturnDate">@checkout.ReturnDate</code> </td>
-            <td><button type="submit">Checkin</button></td> 
+            <form method="post" asp-controller="Checkout" asp-action="CheckIn">
+                <td><code asp-for="Model.checkout.Id">@checkout.Id</code> </td>
+                <td><code asp-for="Model.checkout.BooksId">@checkout.BooksId</code> </td>
+                <td><code asp-for="Model.checkout.BooksId">@checkout.Book.BookName</code> </td>
+                <td><code asp-for="Model.checkout.MembersId">@checkout.MembersId</code> </td>
+                <td><code asp-for="Model.checkout.MembersId">@checkout.Member.FirstName</code> </td>
+                <td><code asp-for="Model.checkout.CheckoutDate">@checkout.CheckoutDate</code> </td>
+                <td><code asp-for="Model.checkout.ReturnDate">@checkout.ReturnDate</code> </td>
+                <td><button name="bookId" value="@checkout.BooksId" type="submit">CheckIn</button></td>
             </form>
 
         </tr>

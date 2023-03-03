@@ -11,6 +11,7 @@ public interface ICheckoutActions
     //void Checkout(Checkout check);
     List<Checkout> Checkout(int bookId, int memberId);
     // List<Checkout> CheckoutsList();
+    string CheckInBook(int bookId);
 
 }
 // Class - To implement the interfaces
@@ -48,34 +49,32 @@ public class CheckoutActions : ICheckoutActions
             };
             context.Checkout.Add(checkout);
             context.SaveChanges();
-           
-            // var query = (from b in context.Books
-            //              join c in context.Checkout
-            // on b.Id equals c.BookId
-            //              join m in context.Members
-            //              on c.MemberId equals m.Id
-            //              select new { b.BookName, m.FirstName, c });
 
-            // var checkoutDetails = from c in context.Checkout
-            //                       join b in context.Books
-            //                   on c.BookId equals b.Id
-            //                       join m in context.Members
-            //                   on c.MemberId equals m.Id
-            //                       select new
-            //                       {
-            //                           BookName = b.BookName,
-            //                           MemberName = m.FirstName
-            //                       };
-           // return query;
-           
-
-            var checkoutList = context.Checkout//Where(s => s.BooksId == 1)
-                        .Include(b => b.Book)//Book here is a virtual entity
+            var checkoutList = context.Checkout
+                        .Include(b => b.Book)
                         .Include(g => g.Member)
                         .ToList();
 
             return checkoutList;
         }
+    }
+
+    public string CheckInBook(int bookId)
+    {
+        string bookName;
+        using (var context = new BookishContext())
+        {
+
+            var selectedBook = context.Books.FirstOrDefault(x => x.BooksId == bookId);
+            if (selectedBook != null)
+            {
+                selectedBook!.AvailableCopies += 1;
+
+            }
+            bookName = selectedBook.BookName;
+            context.SaveChanges();
+        }
+        return (bookName);
     }
 
 

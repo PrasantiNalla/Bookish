@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Training\\Bookish\\bookish\\bookish.csproj": {}
+    "C:\\Training\\Bookish\\bookish.csproj": {}
   },
   "projects": {
-    "C:\\Training\\Bookish\\bookish\\bookish.csproj": {
+    "C:\\Training\\Bookish\\bookish.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Training\\Bookish\\bookish\\bookish.csproj",
+        "projectUniqueName": "C:\\Training\\Bookish\\bookish.csproj",
         "projectName": "bookish",
-        "projectPath": "C:\\Training\\Bookish\\bookish\\bookish.csproj",
+        "projectPath": "C:\\Training\\Bookish\\bookish.csproj",
         "packagesPath": "C:\\Users\\pranal\\.nuget\\packages\\",
-        "outputPath": "C:\\Training\\Bookish\\bookish\\obj\\",
+        "outputPath": "C:\\Training\\Bookish\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pranal\\AppData\\Roaming\\NuGet\\NuGet.Config"
