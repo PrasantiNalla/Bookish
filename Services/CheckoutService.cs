@@ -36,20 +36,22 @@ public class CheckoutActions : ICheckoutActions
     {
         using (var context = new BookishContext())
         {
-            var selectedBook = context.Books.FirstOrDefault(x => x.BooksId == bookId);
-            if (selectedBook != null)
+            if (!(bookId == 0 || memberId == 0))
             {
-                selectedBook!.AvailableCopies -= 1;
+                var selectedBook = context.Books.FirstOrDefault(x => x.BooksId == bookId);
+                if (selectedBook != null)
+                {
+                    selectedBook!.AvailableCopies -= 1;
 
+                }
+                var checkout = new Checkout()
+                {
+                    MembersId = memberId,
+                    BooksId = bookId
+                };
+                context.Checkout.Add(checkout);
+                context.SaveChanges();
             }
-            var checkout = new Checkout()
-            {
-                MembersId = memberId,
-                BooksId = bookId
-            };
-            context.Checkout.Add(checkout);
-            context.SaveChanges();
-
             var checkoutList = context.Checkout
                         .Include(b => b.Book)
                         .Include(g => g.Member)

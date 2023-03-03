@@ -28,13 +28,12 @@ public class CheckoutController : Controller
         return View(checkoutList);
     }
 
-    // [Route("ListCheckouts")]
-    [HttpPost]
+    // [Route("DispalyCheckoutList")]
+    // [HttpPost]
     public IActionResult DispalyCheckoutList()
     {
-        // var checkoutList = _ICheckoutActions.Checkout(0, 0);
-        return View(ListCheckouts(0, 0));
-        //   return RedirectToAction("ListCheckouts", new { bookId = 0, memberId = 0 });
+        var checkoutList = _ICheckoutActions.Checkout(0, 0);
+        return View(checkoutList);
     }
 
     [HttpPost]

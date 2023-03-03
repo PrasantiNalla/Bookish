@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXRCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Training/Bookish/Views/Checkout/DispalyCheckoutList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcRGlzcGFseUNoZWNrb3V0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Training/Bookish/Views/Checkout/ListCheckouts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcTGlzdENoZWNrb3V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
