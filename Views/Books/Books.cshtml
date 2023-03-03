@@ -1,0 +1,27 @@
+@using bookish.Models;
+@model List<Books>
+
+@{
+    ViewData["Title"] = "Books List";
+}
+<h1>Books List</h1>
+<table>
+    <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Total Copies</th>
+        <th>Available Copies</th>
+    </tr>
+   
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td><code>@book.BooksId</code> </td>
+            <td><code>@book.BookName</code> </td>
+            <td><code>@book.AuthorName</code> </td>
+            <td><code>@book.TotalNoOfCopies</code> </td>
+            <td><code>@book.AvailableCopies</code> </td>
+        </tr>
+    }
+</table>

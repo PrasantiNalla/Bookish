@@ -1,0 +1,36 @@
+@using bookish.Models;
+@model List<Checkout>
+
+@{
+    ViewData["Title"] = "Checkouts List";
+}
+<h1>Checkouts List</h1>
+<table>
+    <tr>
+        <th>Checkout ID</th>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Member ID</th>
+        <th>Member Name </th>
+        <th>Date Checked Out</th>
+        <th>Return Date</th>
+
+    </tr>
+   
+    @foreach (var checkout in Model)
+    {
+        <tr>
+            <form method="post" asp-controller="Checkout" asp-action="Checkin" >
+            <td><code asp-for="Model.checkout.Id">@checkout.Id</code> </td>
+            <td><code asp-for="Model.checkout.BooksId">@checkout.BooksId</code> </td>
+            <td><code asp-for="Model.checkout.BooksId">@checkout.Book</code> </td>
+            <td><code asp-for="Model.checkout.MembersId">@checkout.MembersId</code> </td>
+            <td><code asp-for="Model.checkout.MembersId">@checkout.Member</code> </td>
+            <td><code asp-for="Model.checkout.CheckoutDate">@checkout.CheckoutDate</code> </td>
+            <td><code asp-for="Model.checkout.ReturnDate">@checkout.ReturnDate</code> </td>
+            <td><button type="submit">Checkin</button></td> 
+            </form>
+
+        </tr>
+    }
+</table>

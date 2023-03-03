@@ -1,0 +1,23 @@
+@using bookish.Models;
+@model Books
+
+@{
+    ViewData["Title"] = "Add Book";
+}
+<h1>Add Book</h1>
+
+<form method="post" asp-controller="Books" asp-action="SubmitAddBook">
+
+    <label asp-for="BookName">Book Name:</label>
+    <input asp-for="BookName" />
+
+    <label asp-for="AuthorName">Author Name:</label>
+    <input asp-for="AuthorName" />
+
+    <label asp-for="TotalNoOfCopies">Total No Of Copies:</label>
+    <input asp-for="TotalNoOfCopies" />
+
+    <button type="submit">Submit</button>
+</form>
+
+

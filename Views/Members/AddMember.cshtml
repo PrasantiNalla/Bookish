@@ -1,0 +1,25 @@
+@model Members
+
+@{
+    ViewData["Title"] = "Add Member";
+}
+<h1>Add Member</h1>
+
+<form method="post" asp-controller="Members" asp-action="SubmitAddMember">
+
+    <label asp-for="FirstName">First Name:</label> 
+    <input asp-for="FirstName" />
+
+    <label asp-for="LastName">Last Name:</label> 
+    <input asp-for="LastName" />
+
+    <label asp-for="PhoneNo">Phone No:</label>
+    <input type="number" asp-for="PhoneNo" />
+
+    <label asp-for="EmailId">Email ID:</label>
+    <input type="email" asp-for="EmailId" />
+    
+    <button type="submit">Submit</button>
+</form>
+
+

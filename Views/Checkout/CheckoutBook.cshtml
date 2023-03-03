@@ -1,0 +1,26 @@
+@model MyViewModel
+
+@{
+    ViewData["Title"] = "Checkout Book";
+}
+
+<h1>Checkout Book</h1>
+
+<form method="post" asp-controller="Checkout" asp-action="ListCheckouts">
+    <label>Book Name</label>
+    <select name="bookId">
+        @foreach (var mybookview in Model.Books)
+        {
+            <option value="@mybookview.BooksId"> @mybookview.BookName </option>
+        }
+    </select>
+    <label>Member Name</label>
+    <select name="memberId">
+        @foreach (var mymemberview in Model.Members)
+        {
+            <option value="@mymemberview.MembersId"> @mymemberview.FirstName </option>
+        }
+    </select>
+    <button type="submit">Checkout</button>
+</form>
+
